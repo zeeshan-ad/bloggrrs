@@ -1,0 +1,166 @@
+.Logo img {
+  padding-top: 20px;
+  max-width: 120px;
+}
+.Logo {
+  padding-left: 5%;
+}
+.Menu ul li {
+  list-style: none;
+  display: inline;
+  padding: 0 10px;
+}
+.Link {
+  text-decoration: none;
+}
+
+#signin {
+  margin: 12px 15px 0 0;
+  color: #000;
+}
+
+.Menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-right: 5%;
+  padding-top: 15px;
+}
+.Button {
+  background-color: rgb(0, 0, 0);
+  color: #fff;
+  padding: 12px 20px 10px 20px;
+  border-radius: 5px;
+}
+
+.Button2 {
+  text-align: left;
+  margin-bottom: 10px;
+  width: 180px;
+  cursor: pointer;
+  color: #000;
+  text-decoration: none;
+  border: 1px solid #000;
+  background-color: #fff;
+  padding: 10px 10px 10px 30px;
+}
+
+.icons {
+  padding-right: 20px;
+}
+
+.Navbar {
+  background-color: #fff;
+  position: fixed;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  top: 0;
+  margin: 0;
+  padding-bottom: 15px;
+  width: 100%;
+  border-bottom: 1px solid #000;
+}
+
+.popup {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.inner-pop {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 20%;
+  right: 20%;
+  margin-top: auto;
+  background-color: #fff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#auth-options,
+#viaEmail {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  margin: 20% auto;
+  color: #000;
+}
+
+#viaEmail {
+  text-align: center;
+}
+
+#viaEmail form input {
+  display: block;
+  margin-bottom: 10px;
+  width: 230px;
+  padding: 10px;
+}
+
+#viaEmail form input[type="submit"] {
+  color: #fff;
+  background-color: #000;
+  width: 254px;
+  border: none;
+  cursor: pointer;
+}
+
+.Link:active,
+.Link:focus {
+  color: #551a8b;
+}
+
+#auth-options h2,
+#viaEmail h2 {
+  margin-bottom: 40px;
+  font-weight: 100;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.cross {
+  position: absolute;
+  color: #000;
+  top: 5%;
+  right: 5%;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1000px) {
+  .inner-pop {
+    left: 15%;
+    right: 15%;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .inner-pop {
+    left: 10%;
+    right: 10%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .inner-pop {
+    left: 0;
+    right: 0;
+  }
+}
+
+@media screen and (max-width: 370px) {
+  .Navbar {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  #signin {
+    display: none;
+  }
+  .Menu,
+  .Logo {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}

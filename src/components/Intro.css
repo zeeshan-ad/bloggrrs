@@ -1,0 +1,39 @@
+.Intro {
+  background-image: url("./Images/intro.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 80% 50px;
+  padding-top: 90px;
+  padding-bottom: 30px;
+  padding-left: 5%;
+  padding-right: 5%;
+  background-color: #fff;
+  border-bottom: 1px solid #000;
+}
+
+.Intro-left-sidebar {
+  display: flex;
+  flex-direction: column;
+}
+
+.Intro h1 {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 4rem;
+  font-weight: 100;
+}
+
+.Intro p {
+  font-size: 1.1rem;
+  margin-top: 0px;
+  background-color: rgba(255, 203, 43, 0.8);
+  max-width: 400px;
+  color: #000;
+  margin: 0;
+  padding: 5px;
+}
+
+@media screen and (max-width: 500px) {
+  .Intro h1 {
+    font-size: 3.5em;
+  }
+}
