@@ -24,7 +24,8 @@ const App =() =>  {
       setPasswordError('');
   }
 
-  const handleLogin = () =>{
+  const handleLogin = (e) =>{
+    e.preventDefault();
     clearErrors();
     fire
     .auth()
@@ -43,7 +44,8 @@ const App =() =>  {
     });
   };
 
-  const handleSignup= () =>{
+  const handleSignup = (e) =>{
+    e.preventDefault();
     clearErrors();
     fire
     .auth()
@@ -69,8 +71,10 @@ const App =() =>  {
     fire.auth().onAuthStateChanged((user) =>{
         if(user){
           clearInputs();
+          localStorage.setItem('user', user);
           setUser(user);
         }else{
+            localStorage.removeItem('user')
             setUser("");
         }
     });
@@ -80,14 +84,19 @@ const App =() =>  {
     authListener();
   },[]);
 
+  
+
   return (
     <div>
     {user ? (
-      <Home/>
+      <Home 
+        user = {user}
+        handleLogout = {handleLogout}
+      />
     ) : (
       <>
     <Navbar 
-      email={email}
+        email={email}
         password={password}
         setEmail={setEmail}
         setPassword={setPassword}

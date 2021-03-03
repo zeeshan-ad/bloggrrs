@@ -4,6 +4,7 @@ import logo from "./logo.svg";
 import "./Navbar.css";
 const Navbar = (props) => {
   const {
+    handleLogout,
     email,
     setEmail,
     password,
@@ -13,6 +14,8 @@ const Navbar = (props) => {
     emailError,
     passwordError
   } = props;
+
+  const user = localStorage.getItem('user');
 
   const [signinPopup, setSigninPopup] = useState(false);
   const [signupPopup, setSignupPopup] = useState(false);
@@ -44,12 +47,21 @@ const Navbar = (props) => {
         </a>
       </div>
       <div className="Menu">
+      {user ? (
+        <a onClick={handleLogout} className="Button" to="">
+          Log out
+        </a>
+      ) : (
+        <>
         <a onClick={toggleSigninPopup} className="a" id="signin">
           Sign in
         </a>
         <a onClick={toggleSignupPopup} className="Button" to="">
           Get Started
         </a>
+        </>
+      )
+      }
       </div>
 
       {signinPopup ? (
@@ -111,7 +123,6 @@ const Navbar = (props) => {
                   <p className="errMsg">{passwordError}</p>
                   <input
                     type="submit"
-                    onSubmit={(e) => e.preventDefault()}
                     onClick={handleLogin}
                     value="Continue"
                   />
@@ -184,7 +195,6 @@ const Navbar = (props) => {
                   <p className="errMsg">{passwordError}</p>
                   <input
                     type="submit"
-                    onSubmit={(e) => e.preventDefault()}
                     onClick={handleSignup}
                     value="Continue"
                   />

@@ -2,10 +2,17 @@ import React from 'react'
 import './Navbar'
 import Navbar from './Navbar'
 
-const Home = ({handleLogout}) => {
+const Home = (props) => {
+    const {
+        user,
+        handleLogout
+    } = props;
     return (
         <div>
-           <Navbar/> 
+           <Navbar
+               user = {user}
+               handleLogout = {handleLogout}
+           /> 
         </div>
     )
 }
